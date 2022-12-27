@@ -94,7 +94,7 @@ You can read more about it [here](https://central.sonatype.org/publish/publish-g
 
 5. Once published go the [Nexus Repository Manager](https://s01.oss.sonatype.org/#stagingRepositories). Select Staging repositories. Your published package will be shown here. Then click close. If everything checks out correctly the release button will be clickable for you to release the package to the public.
 
-6 - It will take a while maybe 30 minutes for the publised package to be available on [Maven Central Repository](https://central.sonatype.dev/)
+6. It will take a while maybe 30 minutes for the published package to be available on [Maven Central Repository](https://central.sonatype.dev/)
 
 ### Initializing the ContractKit
 
