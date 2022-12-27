@@ -36,7 +36,7 @@ implementation 'io.github.gconnect:celo-sdk-java:0.0.2'
 
 ```
 
-Install manually
+#### Install manually
 If you want to generate the jar and import manually.
 ```
 git clone hhttps://github.com/gconnect/celo-sdk-java.git
@@ -44,7 +44,7 @@ git clone hhttps://github.com/gconnect/celo-sdk-java.git
 ./gradlew publishToMavenLocal
 ```
 
-In your settings.gradle file when working on an android project add `mavenLocal()` inside the dependencyResolutionManagement like this
+In your settings.gradle file when working on an android project if installing it manually add `mavenLocal()` inside the dependencyResolutionManagement like this 👇
 
 ```
 dependencyResolutionManagement {
@@ -56,6 +56,13 @@ dependencyResolutionManagement {
     }
 }
 ```
+
+Inside build.gradle file add the below code in the dependencies
+```
+implementation 'org.celo:contractkit:0.0.1'
+
+```
+
 
 #### Testing
 
@@ -72,26 +79,21 @@ To reset devchain to the initial state run `./scripts/reset_devchain.sh` script.
 ./gradlew clean test
 ```
 
-#### Publishing to JFrog Bintray
-You can read more about in this [manual](https://medium.com/@ankit9673/publishing-your-android-java-library-to-jcenter-89a2beba7e6b)
+#### Publishing to Sonatype Maven Central
+You can read more about it [here](https://central.sonatype.org/publish/publish-gradle/#jar-files)
 
-1. Create an Account on [JFrog Bintray](https://bintray.com/)
-2. Create maven repository (name: celo)
-3. Build and upload library
+1. Create an Account on [Sonatype]([https://bintray.com/](https://auth.sonatype.com/auth/realms/sonatype/login-actions/authenticate?client_id=lift&tab_id=SMPHIGZkjy0))
+2. Create an issue and an empty repository with the Sonatype issue ID
+3. Follow the steps in 1 above to update your build.gradle file
+4. Build and upload library
 
 ```
-./gradlew bintrayUpload -Dbintray.user=<YOUR_USER_NAME> -Dbintray.key=<YOUR_API_KEY>
+./gradlew publish
 ```
 
-The package will be created with these parameters
-```
-Repository: celo
-Package: com.celo:contractkit
-```
+5. Once published go the [Nexus Repository Manager](https://s01.oss.sonatype.org/#stagingRepositories). Select Staging repositories. Your published package will be shown here. Then click close. If everything checks out correctly the release button will be clickable for you to release the package to the public.
 
-4 - After publish to the Bintray library can be published to the JCenter
-
-Follow these [manual](https://www.jfrog.com/confluence/display/BT/Central+Repositories)
+6 - It will take a while maybe 30 minutes for the publised package to be available on [Maven Central Repository](https://central.sonatype.dev/)
 
 ### Initializing the ContractKit
 
