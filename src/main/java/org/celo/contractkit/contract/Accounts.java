@@ -1,5 +1,4 @@
 package org.celo.contractkit.contract;
-
 import io.reactivex.Flowable;
 import io.reactivex.functions.Function;
 import org.web3j.abi.EventEncoder;
@@ -120,55 +119,55 @@ public class Accounts extends Contract {
 
     public static final String FUNC_ISAUTHORIZEDSIGNER = "isAuthorizedSigner";
 
-    public static final Event ACCOUNTCREATED_EVENT = new Event("AccountCreated", 
+    public static final Event ACCOUNTCREATED_EVENT = new Event("AccountCreated",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}));
     ;
 
-    public static final Event ACCOUNTDATAENCRYPTIONKEYSET_EVENT = new Event("AccountDataEncryptionKeySet", 
+    public static final Event ACCOUNTDATAENCRYPTIONKEYSET_EVENT = new Event("AccountDataEncryptionKeySet",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<DynamicBytes>() {}));
     ;
 
-    public static final Event ACCOUNTMETADATAURLSET_EVENT = new Event("AccountMetadataURLSet", 
+    public static final Event ACCOUNTMETADATAURLSET_EVENT = new Event("AccountMetadataURLSet",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Utf8String>() {}));
     ;
 
-    public static final Event ACCOUNTNAMESET_EVENT = new Event("AccountNameSet", 
+    public static final Event ACCOUNTNAMESET_EVENT = new Event("AccountNameSet",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Utf8String>() {}));
     ;
 
-    public static final Event ACCOUNTWALLETADDRESSSET_EVENT = new Event("AccountWalletAddressSet", 
+    public static final Event ACCOUNTWALLETADDRESSSET_EVENT = new Event("AccountWalletAddressSet",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>() {}));
     ;
 
-    public static final Event ATTESTATIONSIGNERAUTHORIZED_EVENT = new Event("AttestationSignerAuthorized", 
+    public static final Event ATTESTATIONSIGNERAUTHORIZED_EVENT = new Event("AttestationSignerAuthorized",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>() {}));
     ;
 
-    public static final Event ATTESTATIONSIGNERREMOVED_EVENT = new Event("AttestationSignerRemoved", 
+    public static final Event ATTESTATIONSIGNERREMOVED_EVENT = new Event("AttestationSignerRemoved",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>() {}));
     ;
 
-    public static final Event OWNERSHIPTRANSFERRED_EVENT = new Event("OwnershipTransferred", 
+    public static final Event OWNERSHIPTRANSFERRED_EVENT = new Event("OwnershipTransferred",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>(true) {}));
     ;
 
-    public static final Event REGISTRYSET_EVENT = new Event("RegistrySet", 
+    public static final Event REGISTRYSET_EVENT = new Event("RegistrySet",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}));
     ;
 
-    public static final Event VALIDATORSIGNERAUTHORIZED_EVENT = new Event("ValidatorSignerAuthorized", 
+    public static final Event VALIDATORSIGNERAUTHORIZED_EVENT = new Event("ValidatorSignerAuthorized",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>() {}));
     ;
 
-    public static final Event VALIDATORSIGNERREMOVED_EVENT = new Event("ValidatorSignerRemoved", 
+    public static final Event VALIDATORSIGNERREMOVED_EVENT = new Event("ValidatorSignerRemoved",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>() {}));
     ;
 
-    public static final Event VOTESIGNERAUTHORIZED_EVENT = new Event("VoteSignerAuthorized", 
+    public static final Event VOTESIGNERAUTHORIZED_EVENT = new Event("VoteSignerAuthorized",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>() {}));
     ;
 
-    public static final Event VOTESIGNERREMOVED_EVENT = new Event("VoteSignerRemoved", 
+    public static final Event VOTESIGNERREMOVED_EVENT = new Event("VoteSignerRemoved",
             Arrays.<TypeReference<?>>asList(new TypeReference<Address>(true) {}, new TypeReference<Address>() {}));
     ;
 
@@ -622,51 +621,51 @@ public class Accounts extends Contract {
     }
 
     public RemoteFunctionCall<String> authorizedBy(String param0) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_AUTHORIZEDBY, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_AUTHORIZEDBY,
                 Arrays.<Type>asList(new Address(param0)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<Boolean> initialized() {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_INITIALIZED, 
-                Arrays.<Type>asList(), 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_INITIALIZED,
+                Arrays.<Type>asList(),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);
     }
 
     public RemoteFunctionCall<Boolean> isOwner() {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ISOWNER, 
-                Arrays.<Type>asList(), 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ISOWNER,
+                Arrays.<Type>asList(),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);
     }
 
     public RemoteFunctionCall<String> owner() {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_OWNER, 
-                Arrays.<Type>asList(), 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_OWNER,
+                Arrays.<Type>asList(),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> registry() {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_REGISTRY, 
-                Arrays.<Type>asList(), 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_REGISTRY,
+                Arrays.<Type>asList(),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<TransactionReceipt> renounceOwnership() {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_RENOUNCEOWNERSHIP, 
-                Arrays.<Type>asList(), 
+                FUNC_RENOUNCEOWNERSHIP,
+                Arrays.<Type>asList(),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> setRegistry(String registryAddress) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_SETREGISTRY, 
+                FUNC_SETREGISTRY,
                 Arrays.<Type>asList(new Address(registryAddress)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
@@ -674,15 +673,15 @@ public class Accounts extends Contract {
 
     public RemoteFunctionCall<TransactionReceipt> transferOwnership(String newOwner) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_TRANSFEROWNERSHIP, 
+                FUNC_TRANSFEROWNERSHIP,
                 Arrays.<Type>asList(new Address(newOwner)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<Tuple4<BigInteger, BigInteger, BigInteger, BigInteger>> getVersionNumber() {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETVERSIONNUMBER, 
-                Arrays.<Type>asList(), 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETVERSIONNUMBER,
+                Arrays.<Type>asList(),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}, new TypeReference<Uint256>() {}, new TypeReference<Uint256>() {}, new TypeReference<Uint256>() {}));
         return new RemoteFunctionCall<Tuple4<BigInteger, BigInteger, BigInteger, BigInteger>>(function,
                 new Callable<Tuple4<BigInteger, BigInteger, BigInteger, BigInteger>>() {
@@ -690,9 +689,9 @@ public class Accounts extends Contract {
                     public Tuple4<BigInteger, BigInteger, BigInteger, BigInteger> call() throws Exception {
                         List<Type> results = executeCallMultipleValueReturn(function);
                         return new Tuple4<BigInteger, BigInteger, BigInteger, BigInteger>(
-                                (BigInteger) results.get(0).getValue(), 
-                                (BigInteger) results.get(1).getValue(), 
-                                (BigInteger) results.get(2).getValue(), 
+                                (BigInteger) results.get(0).getValue(),
+                                (BigInteger) results.get(1).getValue(),
+                                (BigInteger) results.get(2).getValue(),
                                 (BigInteger) results.get(3).getValue());
                     }
                 });
@@ -700,7 +699,7 @@ public class Accounts extends Contract {
 
     public RemoteFunctionCall<TransactionReceipt> initialize(String registryAddress) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_INITIALIZE, 
+                FUNC_INITIALIZE,
                 Arrays.<Type>asList(new Address(registryAddress)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
@@ -708,28 +707,28 @@ public class Accounts extends Contract {
 
     public RemoteFunctionCall<TransactionReceipt> setAccount(String name, byte[] dataEncryptionKey, String walletAddress, BigInteger v, byte[] r, byte[] s) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_SETACCOUNT, 
+                FUNC_SETACCOUNT,
                 Arrays.<Type>asList(new Utf8String(name),
-                new DynamicBytes(dataEncryptionKey),
-                new Address(walletAddress),
-                new org.web3j.abi.datatypes.generated.Uint8(v), 
-                new org.web3j.abi.datatypes.generated.Bytes32(r), 
-                new org.web3j.abi.datatypes.generated.Bytes32(s)), 
+                        new DynamicBytes(dataEncryptionKey),
+                        new Address(walletAddress),
+                        new org.web3j.abi.datatypes.generated.Uint8(v),
+                        new org.web3j.abi.datatypes.generated.Bytes32(r),
+                        new org.web3j.abi.datatypes.generated.Bytes32(s)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> createAccount() {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_CREATEACCOUNT, 
-                Arrays.<Type>asList(), 
+                FUNC_CREATEACCOUNT,
+                Arrays.<Type>asList(),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> setName(String name) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_SETNAME, 
+                FUNC_SETNAME,
                 Arrays.<Type>asList(new Utf8String(name)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
@@ -737,18 +736,18 @@ public class Accounts extends Contract {
 
     public RemoteFunctionCall<TransactionReceipt> setWalletAddress(String walletAddress, BigInteger v, byte[] r, byte[] s) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_SETWALLETADDRESS, 
+                FUNC_SETWALLETADDRESS,
                 Arrays.<Type>asList(new Address(walletAddress),
-                new org.web3j.abi.datatypes.generated.Uint8(v), 
-                new org.web3j.abi.datatypes.generated.Bytes32(r), 
-                new org.web3j.abi.datatypes.generated.Bytes32(s)), 
+                        new org.web3j.abi.datatypes.generated.Uint8(v),
+                        new org.web3j.abi.datatypes.generated.Bytes32(r),
+                        new org.web3j.abi.datatypes.generated.Bytes32(s)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> setAccountDataEncryptionKey(byte[] dataEncryptionKey) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_SETACCOUNTDATAENCRYPTIONKEY, 
+                FUNC_SETACCOUNTDATAENCRYPTIONKEY,
                 Arrays.<Type>asList(new DynamicBytes(dataEncryptionKey)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
@@ -756,7 +755,7 @@ public class Accounts extends Contract {
 
     public RemoteFunctionCall<TransactionReceipt> setMetadataURL(String metadataURL) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_SETMETADATAURL, 
+                FUNC_SETMETADATAURL,
                 Arrays.<Type>asList(new Utf8String(metadataURL)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
@@ -764,173 +763,173 @@ public class Accounts extends Contract {
 
     public RemoteFunctionCall<TransactionReceipt> authorizeVoteSigner(String signer, BigInteger v, byte[] r, byte[] s) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_AUTHORIZEVOTESIGNER, 
+                FUNC_AUTHORIZEVOTESIGNER,
                 Arrays.<Type>asList(new Address(signer),
-                new org.web3j.abi.datatypes.generated.Uint8(v), 
-                new org.web3j.abi.datatypes.generated.Bytes32(r), 
-                new org.web3j.abi.datatypes.generated.Bytes32(s)), 
+                        new org.web3j.abi.datatypes.generated.Uint8(v),
+                        new org.web3j.abi.datatypes.generated.Bytes32(r),
+                        new org.web3j.abi.datatypes.generated.Bytes32(s)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> authorizeValidatorSigner(String signer, BigInteger v, byte[] r, byte[] s) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_AUTHORIZEVALIDATORSIGNER, 
+                FUNC_AUTHORIZEVALIDATORSIGNER,
                 Arrays.<Type>asList(new Address(signer),
-                new org.web3j.abi.datatypes.generated.Uint8(v), 
-                new org.web3j.abi.datatypes.generated.Bytes32(r), 
-                new org.web3j.abi.datatypes.generated.Bytes32(s)), 
+                        new org.web3j.abi.datatypes.generated.Uint8(v),
+                        new org.web3j.abi.datatypes.generated.Bytes32(r),
+                        new org.web3j.abi.datatypes.generated.Bytes32(s)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> authorizeValidatorSignerWithPublicKey(String signer, BigInteger v, byte[] r, byte[] s, byte[] ecdsaPublicKey) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_AUTHORIZEVALIDATORSIGNERWITHPUBLICKEY, 
+                FUNC_AUTHORIZEVALIDATORSIGNERWITHPUBLICKEY,
                 Arrays.<Type>asList(new Address(signer),
-                new org.web3j.abi.datatypes.generated.Uint8(v), 
-                new org.web3j.abi.datatypes.generated.Bytes32(r), 
-                new org.web3j.abi.datatypes.generated.Bytes32(s), 
-                new DynamicBytes(ecdsaPublicKey)),
+                        new org.web3j.abi.datatypes.generated.Uint8(v),
+                        new org.web3j.abi.datatypes.generated.Bytes32(r),
+                        new org.web3j.abi.datatypes.generated.Bytes32(s),
+                        new DynamicBytes(ecdsaPublicKey)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> authorizeValidatorSignerWithKeys(String signer, BigInteger v, byte[] r, byte[] s, byte[] ecdsaPublicKey, byte[] blsPublicKey, byte[] blsPop) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_AUTHORIZEVALIDATORSIGNERWITHKEYS, 
+                FUNC_AUTHORIZEVALIDATORSIGNERWITHKEYS,
                 Arrays.<Type>asList(new Address(signer),
-                new org.web3j.abi.datatypes.generated.Uint8(v), 
-                new org.web3j.abi.datatypes.generated.Bytes32(r), 
-                new org.web3j.abi.datatypes.generated.Bytes32(s), 
-                new DynamicBytes(ecdsaPublicKey),
-                new DynamicBytes(blsPublicKey),
-                new DynamicBytes(blsPop)),
+                        new org.web3j.abi.datatypes.generated.Uint8(v),
+                        new org.web3j.abi.datatypes.generated.Bytes32(r),
+                        new org.web3j.abi.datatypes.generated.Bytes32(s),
+                        new DynamicBytes(ecdsaPublicKey),
+                        new DynamicBytes(blsPublicKey),
+                        new DynamicBytes(blsPop)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> authorizeAttestationSigner(String signer, BigInteger v, byte[] r, byte[] s) {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_AUTHORIZEATTESTATIONSIGNER, 
+                FUNC_AUTHORIZEATTESTATIONSIGNER,
                 Arrays.<Type>asList(new Address(signer),
-                new org.web3j.abi.datatypes.generated.Uint8(v), 
-                new org.web3j.abi.datatypes.generated.Bytes32(r), 
-                new org.web3j.abi.datatypes.generated.Bytes32(s)), 
+                        new org.web3j.abi.datatypes.generated.Uint8(v),
+                        new org.web3j.abi.datatypes.generated.Bytes32(r),
+                        new org.web3j.abi.datatypes.generated.Bytes32(s)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> removeVoteSigner() {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_REMOVEVOTESIGNER, 
-                Arrays.<Type>asList(), 
+                FUNC_REMOVEVOTESIGNER,
+                Arrays.<Type>asList(),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> removeValidatorSigner() {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_REMOVEVALIDATORSIGNER, 
-                Arrays.<Type>asList(), 
+                FUNC_REMOVEVALIDATORSIGNER,
+                Arrays.<Type>asList(),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<TransactionReceipt> removeAttestationSigner() {
         final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(
-                FUNC_REMOVEATTESTATIONSIGNER, 
-                Arrays.<Type>asList(), 
+                FUNC_REMOVEATTESTATIONSIGNER,
+                Arrays.<Type>asList(),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteFunctionCall<String> attestationSignerToAccount(String signer) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ATTESTATIONSIGNERTOACCOUNT, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ATTESTATIONSIGNERTOACCOUNT,
                 Arrays.<Type>asList(new Address(signer)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> validatorSignerToAccount(String signer) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_VALIDATORSIGNERTOACCOUNT, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_VALIDATORSIGNERTOACCOUNT,
                 Arrays.<Type>asList(new Address(signer)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> voteSignerToAccount(String signer) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_VOTESIGNERTOACCOUNT, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_VOTESIGNERTOACCOUNT,
                 Arrays.<Type>asList(new Address(signer)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> signerToAccount(String signer) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_SIGNERTOACCOUNT, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_SIGNERTOACCOUNT,
                 Arrays.<Type>asList(new Address(signer)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> getVoteSigner(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETVOTESIGNER, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETVOTESIGNER,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> getValidatorSigner(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETVALIDATORSIGNER, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETVALIDATORSIGNER,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> getAttestationSigner(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETATTESTATIONSIGNER, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETATTESTATIONSIGNER,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<Boolean> hasAuthorizedVoteSigner(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_HASAUTHORIZEDVOTESIGNER, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_HASAUTHORIZEDVOTESIGNER,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);
     }
 
     public RemoteFunctionCall<Boolean> hasAuthorizedValidatorSigner(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_HASAUTHORIZEDVALIDATORSIGNER, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_HASAUTHORIZEDVALIDATORSIGNER,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);
     }
 
     public RemoteFunctionCall<Boolean> hasAuthorizedAttestationSigner(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_HASAUTHORIZEDATTESTATIONSIGNER, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_HASAUTHORIZEDATTESTATIONSIGNER,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);
     }
 
     public RemoteFunctionCall<String> getName(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETNAME, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETNAME,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<String> getMetadataURL(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETMETADATAURL, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETMETADATAURL,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<Tuple2<List<BigInteger>, byte[]>> batchGetMetadataURL(List<String> accountsToQuery) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_BATCHGETMETADATAURL, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_BATCHGETMETADATAURL,
                 Arrays.<Type>asList(new DynamicArray<Address>(
                         Address.class,
                         org.web3j.abi.Utils.typeMap(accountsToQuery, Address.class))),
@@ -941,35 +940,35 @@ public class Accounts extends Contract {
                     public Tuple2<List<BigInteger>, byte[]> call() throws Exception {
                         List<Type> results = executeCallMultipleValueReturn(function);
                         return new Tuple2<List<BigInteger>, byte[]>(
-                                convertToNative((List<Uint256>) results.get(0).getValue()), 
+                                convertToNative((List<Uint256>) results.get(0).getValue()),
                                 (byte[]) results.get(1).getValue());
                     }
                 });
     }
 
     public RemoteFunctionCall<byte[]> getDataEncryptionKey(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETDATAENCRYPTIONKEY, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETDATAENCRYPTIONKEY,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<DynamicBytes>() {}));
         return executeRemoteCallSingleValueReturn(function, byte[].class);
     }
 
     public RemoteFunctionCall<String> getWalletAddress(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETWALLETADDRESS, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_GETWALLETADDRESS,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
     public RemoteFunctionCall<Boolean> isAccount(String account) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ISACCOUNT, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ISACCOUNT,
                 Arrays.<Type>asList(new Address(account)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);
     }
 
     public RemoteFunctionCall<Boolean> isAuthorizedSigner(String signer) {
-        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ISAUTHORIZEDSIGNER, 
+        final org.web3j.abi.datatypes.Function function = new org.web3j.abi.datatypes.Function(FUNC_ISAUTHORIZEDSIGNER,
                 Arrays.<Type>asList(new Address(signer)),
                 Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
         return executeRemoteCallSingleValueReturn(function, Boolean.class);

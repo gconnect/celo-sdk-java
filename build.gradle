@@ -1,16 +1,29 @@
 plugins {
-    id 'com.jfrog.bintray' version '1.8.5'
     id 'maven-publish'
     id 'java-library'
+    id 'signing'
 }
+
+group 'io.github.gconnect'
+version '0.0.2'
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
-tasks.register("sourcesJar", Jar) {
-    from sourceSets.main.allJava
-    classifier "sources"
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+
+artifacts {
+    archives javadocJar, sourcesJar
 }
 
 def pomConfig = {
@@ -23,14 +36,16 @@ def pomConfig = {
     }
     developers {
         developer {
-            id "Re11oy"
-            name "Kirill Talaluev"
-            email "k@talaluev.me"
+            id "gconnect"
+            name "Glory Agatevure"
+            email "agatevureglory@gmail.com"
         }
     }
 
     scm {
-        url "https://github.com/celo-org/celo-monorepo"
+        connection "scm:git:git:github.com/gconnect/celo-sdk-java.git"
+        developerConnection "scm:git:ssh://github.com/gconnect/celo-sdk-java.git"
+        url "https://github.com/gconnect/celo-sdk-java"
     }
 }
 
@@ -41,40 +56,56 @@ publishing {
             artifact sourcesJar {
                 classifier "sources"
             }
-            groupId 'org.celo'
-            artifactId 'contractkit'
-            version '0.0.1'
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+            groupId 'io.github.gconnect'
+            artifactId 'celo-sdk-java'
+            version '0.0.2'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'CELO Java SDK')
                 root.appendNode('name', 'CELO Java SDK')
-                root.appendNode('url', 'https://github.com/celo-org/celo-monorepo')
+                root.appendNode('url', 'https://github.com/gconnect/celo-sdk-java')
+                root.appendNode('inceptionYear', new Date())
                 root.children().last() + pomConfig
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2"
+            credentials {
+                username = project.properties["ossrhUsername"]
+                password = project.properties["ossrhPassword"]
             }
         }
     }
 }
 
-bintray {
-    user = System.getProperty('bintray.user')
-    key = System.getProperty('bintray.key')
-    publications = ['mavenPublication']
+signing {
+    sign publishing.publications.mavenPublication
+    sign configurations.archives
+}
 
-    pkg {
-        repo = 'celo'
-        name = 'org.celo:contractkit'
-        userOrg = 'celo'
-        websiteUrl = 'https://github.com/celo-org/celo-monorepo'
-        vcsUrl = 'https://github.com/celo-org/celo-monorepo'
-        licenses = ["Apache-2.0"]
-        version {
-            name = '0.0.1'
-            desc = '0.0.1'
-            released  = new Date()
-            vcsTag = '0.0.1'
-        }
+javadoc {
+//    if(JavaVersion.current().isJava9Compatible()){
+//        options.addBooleanOption('html5', '-quiet')
+//    }
+    tasks.withType(Javadoc) {
+        // The '-quiet' as second argument is actually a hack,
+        // since the one paramater addStringOption doesn't seem to
+        // work, we extra add '-quiet', which is added anyway by
+        // gradle. See https://github.com/gradle/gradle/issues/2354
+        // See JDK-8200363 (https://bugs.openjdk.java.net/browse/JDK-8200363)
+        // for information about the -Xwerror option.
+        failOnError false
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        options.addStringOption('charSet', 'UTF-8')
     }
-
 }
 
 dependencies {
@@ -83,7 +114,5 @@ dependencies {
 
     implementation 'com.google.guava:guava:29.0-jre',
             'ch.qos.logback:logback-classic:1.2.3'
-
     testImplementation 'junit:junit:4.13'
-    testCompile 'org.mockito:mockito-core:2.+'
 }
