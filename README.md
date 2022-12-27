@@ -2,7 +2,7 @@
 
 ## Introduction
 
-celo-sdk-java, originally adapted from Ethereum web3j, is a Java library for working with the Celo Blockchain and Celo Core Contracts.
+Celo-sdk-java, originally adapted from Ethereum web3j, is a Java library for working with the Celo Blockchain and Celo Core Contracts.
 
 ## Features
 
@@ -16,46 +16,45 @@ celo-sdk-java, originally adapted from Ethereum web3j, is a Java library for wor
 ## Getting Started
 
 ### Prerequisites
-Java 8  
-Gradle 6
+Java 11  
+Gradle 7
 
 ### Install
 Install from repositories:  
 maven  
 ```
-<repositories>
-    <repository>
-        <id>bintray-celo-celo</id>
-        <name>bintray</name>
-        <url>https://dl.bintray.com/celo/celo</url>
-    </repository>
-</repositories>
+<dependency>
+    <groupId>io.github.gconnect</groupId>
+    <artifactId>celo-sdk-java</artifactId>
+    <version>0.0.2</version>
+</dependency>
 
-<dependencies>
-    <dependency>
-      <groupId>org.celo</groupId>
-      <artifactId>contractkit</artifactId>
-      <version>0.0.1</version>
-    </dependency>
-</dependencies>
 ```
-Gradle
+build.gradle
 ```
-repositories {
-    maven {
-        url  "https://dl.bintray.com/celo/celo" 
-    }
-}
+implementation 'io.github.gconnect:celo-sdk-java:0.0.2'
 
-compile 'org.celo:contractkit:0.0.1'
 ```
 
 Install manually
 If you want to generate the jar and import manually.
 ```
-git clone https://github.com/celo/celo-sdk-java.git
+git clone hhttps://github.com/gconnect/celo-sdk-java.git
 ./gradlew clean build -xtest
 ./gradlew publishToMavenLocal
+```
+
+In your settings.gradle file when working on an android project add `mavenLocal()` inside the dependencyResolutionManagement like this
+
+```
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
 ```
 
 #### Testing
