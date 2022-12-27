@@ -33,8 +33,8 @@ maven
 build.gradle
 ```
 implementation 'io.github.gconnect:celo-sdk-java:0.0.2'
-
 ```
+[Maven Central Dependency](https://central.sonatype.dev/artifact/io.github.gconnect/celo-sdk-java/0.0.2)
 
 #### Install manually
 If you want to generate the jar and import manually.
@@ -60,8 +60,9 @@ dependencyResolutionManagement {
 Inside build.gradle file add the below code in the dependencies
 ```
 implementation 'org.celo:contractkit:0.0.1'
-
 ```
+
+
 
 
 #### Testing
